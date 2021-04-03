@@ -22,5 +22,10 @@ THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 
+
+LIVE LINK:  https://christi-lee-mc.github.io/password-generator/
+
+GITHUB LINK: https://github.com/Christi-Lee-MC/password-generator
+
 //screenshot
 ![image](https://user-images.githubusercontent.com/79948400/113348111-0d1e6e00-92eb-11eb-86dd-28faf5dafe41.png)
