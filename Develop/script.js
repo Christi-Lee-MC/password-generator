@@ -9,15 +9,16 @@ var numChars = "1234567890";
 var specialChars = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
 var characterSet = "";
+var randomPassword = "";
 
 function generatePassword() {
   var passwordLength = parseInt(
     prompt(
-      "How long would you like your password to be? Pick a number between 8 and 128"
+      "How long would you like your password to be? Pick a number between 8 and 128."
     )
   );
 
-  if (passwordLength > 8 && passwordLength < 128) {
+  if (passwordLength >= 8 && passwordLength <= 128) {
     var includeUpper = confirm(
       "Would you like to include UPPERCASE characters? Click OK for YES or click CANCEL for NO"
     );
@@ -50,16 +51,23 @@ function generatePassword() {
     }
 
     if (includeSpecial === true) {
-      characterSet = characterSet + specialChars
-          }
+      characterSet = characterSet + specialChars;
+    }
 
     console.log(characterSet);
+
+    for (var i = 0; i < passwordLength; i++) {
+      var value = Math.floor(Math.random() * characterSet.length);
+      randomPassword = randomPassword + characterSet[value];
+    }
+    return randomPassword
+
   } else {
     alert("Please enter a length between 8 and 128");
+    writePassword();
   }
 }
 
-// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
